@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import { useAuth } from '../../contexts/AuthContext'
 import { supabase } from '../../lib/supabase'
+import AlterarSenhaModal from '../ui/AlterarSenhaModal'
 
 function iniciais(nome) {
   if (!nome) return '?'
@@ -14,6 +15,7 @@ export default function Sidebar() {
   const [collapsed, setCollapsed] = useState(() =>
     localStorage.getItem('sidebar-collapsed') === 'true'
   )
+  const [alterarSenha, setAlterarSenha] = useState(false)
 
   useEffect(() => {
     localStorage.setItem('sidebar-collapsed', String(collapsed))
@@ -32,6 +34,7 @@ export default function Sidebar() {
     }`
 
   return (
+    <>
     <aside
       className={`${collapsed ? 'w-[60px]' : 'w-[220px]'} min-h-screen bg-slate-900 border-r border-slate-700 flex flex-col flex-shrink-0 transition-all duration-300 overflow-hidden`}
     >
@@ -86,6 +89,16 @@ export default function Sidebar() {
               <span className="text-white text-xs font-semibold">{iniciais(perfil?.nome)}</span>
             </div>
             <button
+              onClick={() => setAlterarSenha(true)}
+              title="Alterar senha"
+              className="p-1.5 rounded text-slate-500 hover:text-slate-200 hover:bg-slate-700 transition-colors"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                  d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
+              </svg>
+            </button>
+            <button
               onClick={sair}
               title="Sair"
               className="p-1.5 rounded text-slate-500 hover:text-slate-200 hover:bg-slate-700 transition-colors"
@@ -105,6 +118,16 @@ export default function Sidebar() {
               <p className="text-slate-200 text-xs font-medium truncate">{perfil?.nome || 'Usuário'}</p>
               <p className="text-slate-500 text-[11px] truncate capitalize">{perfil?.role || 'user'}</p>
             </div>
+            <button
+              onClick={() => setAlterarSenha(true)}
+              title="Alterar senha"
+              className="p-1.5 rounded text-slate-500 hover:text-slate-200 hover:bg-slate-700 transition-colors flex-shrink-0"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                  d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
+              </svg>
+            </button>
             <button
               onClick={sair}
               title="Sair"
@@ -133,5 +156,8 @@ export default function Sidebar() {
         </button>
       </div>
     </aside>
+
+      {alterarSenha && <AlterarSenhaModal onClose={() => setAlterarSenha(false)} />}
+    </>
   )
 }

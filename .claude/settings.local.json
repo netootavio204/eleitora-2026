@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(cd \"c:\\\\SIS\\\\12 Agenda-SENADO\"; $job = Start-Job -ScriptBlock { Set-Location \"c:\\\\SIS\\\\12 Agenda-SENADO\"; npm run dev 2>&1 }; Start-Sleep -Seconds 8; Receive-Job $job; Stop-Job $job; Remove-Job $job)",
+      "Bash(node -e ' *)",
+      "Bash(grep -n \"perfil\\\\|isAdmin\\\\|perfis\" src/hooks/useEvents.js)",
+      "PowerShell(cd \"c:\\\\SIS\\\\12 Agenda-SENADO\"; Start-Process powershell -ArgumentList \"-NoExit\", \"-Command\", \"cd 'c:\\\\SIS\\\\12 Agenda-SENADO'; npm run dev\")",
+      "Read(//c/SIS/12 Agenda-SENADO/**)",
+      "PowerShell(netstat -ano)",
+      "Bash([ -f \"c:/SIS/12 Agenda-SENADO/$f\" ])",
+      "Bash(node reset_banco.mjs)",
+      "Bash(curl -s http://localhost:5173)",
+      "Bash(curl -s 'https://dldbfrulueckrokhlzbg.supabase.co/rest/v1/pg_policies?select=tablename,policyname,cmd,roles,qual' -H 'apikey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRsZGJmcnVsdWVja3Jva2hsemJnIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3Njg4NTI2NCwiZXhwIjoyMDkyNDYxMjY0fQ.qRF_E4rhjH01-gPXCF5-hBlOSDt80Li9gqGTd6PE6cE' -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRsZGJmcnVsdWVja3Jva2hsemJnIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3Njg4NTI2NCwiZXhwIjoyMDkyNDYxMjY0fQ.qRF_E4rhjH01-gPXCF5-hBlOSDt80Li9gqGTd6PE6cE')",
+      "Bash(supabase --version)",
+      "Bash(curl -s -X POST https://api.supabase.com/v1/projects/dldbfrulueckrokhlzbg/database/query -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRsZGJmcnVsdWVja3Jva2hsemJnIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3Njg4NTI2NCwiZXhwIjoyMDkyNDYxMjY0fQ.qRF_E4rhjH01-gPXCF5-hBlOSDt80Li9gqGTd6PE6cE' -H 'Content-Type: application/json' -d '{\"query\":\"SELECT current_user;\"}')",
+      "Bash(curl -s 'https://dldbfrulueckrokhlzbg.supabase.co/rest/v1/eventos?select=id&limit=3' -H 'apikey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRsZGJmcnVsdWVja3Jva2hsemJnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY4ODUyNjQsImV4cCI6MjA5MjQ2MTI2NH0.O_PNGSK9QGeM9eVoD1YrQqR-ea8uVTZu3uTUCVQBGMQ' -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRsZGJmcnVsdWVja3Jva2hsemJnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY4ODUyNjQsImV4cCI6MjA5MjQ2MTI2NH0.O_PNGSK9QGeM9eVoD1YrQqR-ea8uVTZu3uTUCVQBGMQ')",
+      "Bash(curl -s 'https://dldbfrulueckrokhlzbg.supabase.co/rest/v1/eventos?select=id&limit=3' -H 'apikey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRsZGJmcnVsdWVja3Jva2hsemJnIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3Njg4NTI2NCwiZXhwIjoyMDkyNDYxMjY0fQ.qRF_E4rhjH01-gPXCF5-hBlOSDt80Li9gqGTd6PE6cE' -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRsZGJmcnVsdWVja3Jva2hsemJnIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3Njg4NTI2NCwiZXhwIjoyMDkyNDYxMjY0fQ.qRF_E4rhjH01-gPXCF5-hBlOSDt80Li9gqGTd6PE6cE')",
+      "Bash(curl -s https://dldbfrulueckrokhlzbg.supabase.co/pg/policies -H 'apikey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRsZGJmcnVsdWVja3Jva2hsemJnIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3Njg4NTI2NCwiZXhwIjoyMDkyNDYxMjY0fQ.qRF_E4rhjH01-gPXCF5-hBlOSDt80Li9gqGTd6PE6cE' -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRsZGJmcnVsdWVja3Jva2hsemJnIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3Njg4NTI2NCwiZXhwIjoyMDkyNDYxMjY0fQ.qRF_E4rhjH01-gPXCF5-hBlOSDt80Li9gqGTd6PE6cE')",
+      "Bash(curl -s https://dldbfrulueckrokhlzbg.supabase.co/functions/v1/ -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRsZGJmcnVsdWVja3Jva2hsemJnIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3Njg4NTI2NCwiZXhwIjoyMDkyNDYxMjY0fQ.qRF_E4rhjH01-gPXCF5-hBlOSDt80Li9gqGTd6PE6cE')",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}\" http://localhost:5173/)",
+      "Bash(node limpar_categorias.mjs)",
+      "WebFetch(domain:www12.senado.leg.br)",
+      "Bash(curl -s -A \"Mozilla/5.0 \\(Windows NT 10.0; Win64; x64\\) AppleWebKit/537.36\" \"https://www12.senado.leg.br/noticias/infomaterias/2026/03/confira-datas-e-prazos-do-calendario-eleitoral-de-2026\")",
+      "Bash(node testar_parser.mjs)",
+      "Bash(node --input-type=module)"
+    ],
+    "additionalDirectories": [
+      "c:\\SIS\\12 Agenda-SENADO\\scripts"
+    ]
+  }
+}
